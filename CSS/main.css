@@ -1,19 +1,111 @@
-/*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
+#boggle_grid {
 
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
+background-color: #398bd4;
+/*border: 20px #ffca08;*/
+margin: 80px;
+text-align: center;
+vertical-align: middle;
 
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
+}
+
+
+
+
+
+
+
+
+
+#container {
+
+    background-color: #ff7400;
+    width: 50%;
+    margin-left: 350px;
+    /*padding: 150px;
+    border: 150px 
+    margin: 150px;
+}*/
+        text-align: center;
+        vertical-align: middle;
+        }
+
+
+
+.btn{
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: #fff;
+    background: none;
+    cursor: pointer;
+    padding: 5px 16px;
+    display: inline-block;
+    margin: 5px 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 50px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 90px;
+    outline: none;
+    position: relative;
+    background: #fff;
+    color: #fff;
+    box-shadow: 0 6px #0090b2;
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn:before{
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+}
+
+.btn_tab {
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    padding: 0;
+    color: #fff;
+}
+
+.btn_tab:hover {
+    box-shadow: 0 4px #ACCEEC;
+    top: 2px;
+}
+
+.btn_tab:active {
+    box-shadow: 0 0 #ACCEEC;
+    top: 6px;
+}
 
 html {
-    color: #222;
-    font-size: 1em;
-    line-height: 1.4;
+
+    /*background-color: #f57921;
+    width: 300px;
+    padding: 50px;
+    border: 50px solid navy;
+    margin: 50px;*/
 }
 
 /*
