@@ -2,18 +2,17 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Boggle</title>
+        <title>Boggle Test</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="CSS/main.css">
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript">"js/game_play_js.js"</script>
+        <script src="https:ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
 
     </head>
     <body>
              <div id = "container">
              	<header><img src="img/boggle_logo_slice.png"></header>
-             	<br>
-             	<br>
             <div id="boggle_grid" onmouseleave="clearBoard()" onmouseup="submitWord(event)">
 					   		 	<div id="tab_1" class="btn_tab" onmousedown="buildWord(event)" onmousemove="buildingWord(event)" onmouseup="submitWord(event)"></div>
 					   		 	<div id="tab_2" class="btn_tab" onmousedown="buildWord(event)" onmousemove="buildingWord(event)" onmouseup="submitWord(event)"></div>
@@ -34,45 +33,47 @@
 					   		 	<div id="tab_14" class="btn_tab" onmousedown="buildWord(event)"onmousemove="buildingWord(event)" onmouseup="submitWord(event)"></div>
 					   		 	<div id="tab_15" class="btn_tab" onmousedown="buildWord(event)" onmousemove="buildingWord(event)" onmouseup="submitWord(event)"></div>
 					   		 	<div id="cube_16" class="btn_tab" onmousedown="buildWord(event)" onmousemove="buildingWord(event)" onmouseup="submitWord(event)"></div>
+
+					   		 	<div id="tab_17" class="btn_tab" onmousedown="buildWord(event)" onmousemove="buildingWord(event)" onmouseup="submitWord(event)"></div>
+					   		 	<div id="tab_18" class="btn_tab" onmousedown="buildWord(event)" onmousemove="buildingWord(event)" onmouseup="submitWord(event)"></div>
+					   		 	<div id="tab_19" class="btn_tab" onmousedown="buildWord(event)" onmousemove="buildingWord(event)" onmouseup="submitWord(event)"></div>
+					   		 	<div id="tab_20" class="btn_tab" onmousedown="buildWord(event)" onmousemove="buildingWord(event)" onmouseup="submitWord(event)"></div>
+					   		 	<br>
+					   		 	<div id="tab_21" class="btn_tab" onmousedown="buildWord(event)" onmousemove="buildingWord(event)" onmouseup="submitWord(event)"></div>
+					   		 	<div id="tab_22" class="btn_tab" onmousedown="buildWord(event)" onmousemove="buildingWord(event)" onmouseup="submitWord(event)"></div>
+					   		 	<div id="tab_23" class="btn_tab" onmousedown="buildWord(event)" onmousemove="buildingWord(event)" onmouseup="submitWord(event)"></div>
+					   		 	<div id="tab_24" class="btn_tab" onmousedown="buildWord(event)" onmousemove="buildingWord(event)" onmouseup="submitWord(event)"></div>
+					   		 	<br>
+					   		 	<div id="tab_25" class="btn_tab" onmousedown="buildWord(event)" onmousemove="buildingWord(event)" onmouseup="submitWord(event)"></div>
 			</div><!-- ......end of grid -->
 
 
+			<div id ="s_btn"> <button>Submit Word</button>
+
+
+
+        	</div><!-- ....end submit button  -->
 
 
 
 			<div id = "score">
 
-					<!-- //will be table// -->
-				<p>word</p>
-				<p>points</p>
-				<p>such combo</p>
-				<p>total</p>
-
-				<p>Button</p>
-
-
-
-
-
-
-
+<table>
+  <tr>
+    <td>Word</td>
+    <td>Score</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>8888</td>		
+  </tr>
+</table>
 
 			</div><!-- ........end of score -->
 
 
-
-
-
-
-
-
              </div><!-- ......end of container -->
 
-
-
-
-        
-       
       
     </body>
 </html>
