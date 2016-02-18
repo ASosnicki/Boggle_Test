@@ -2,59 +2,55 @@ var boggleWords = new Array();
 var currentString = "";
 //flag for if string is being built currently
 var mousedown = 0;
-//variables for game timer and timer
-var resetsec = 01;
-var resetmin = 3;
-var sec = 0;
-var min = 0;
-var countdownTime;
+
 //words from boggleDictionary.js 
 var dictionaryWords; 
 // game score
 var sum = 0;
 // for knowing legal moves
-var prevcube;
-// for pausing game
-var is_pause = false;
+var prevtab;
 
-// Boggle letters from my Boggle game, a Hasbro-owned product
-var cube1 = new Array('Q', 'U', 'M', 'H', 'N', 'I');
-var cube2 = new Array('L', 'X', 'E', 'D', 'I', 'R');
-var cube3 = new Array('R', 'Y', 'T', 'L', 'T', 'E');
-var cube4 = new Array('S', 'E', 'E', 'U', 'I', 'N');
-var cube5 = new Array('L', 'R', 'H', 'Z', 'N', 'N');
-var cube6 = new Array('Y', 'I', 'D', 'S', 'T', 'T');
-var cube7 = new Array('G', 'E', 'E', 'N', 'A', 'A');
-var cube8 = new Array('S', 'K', 'F', 'F', 'P', 'A');
-var cube9 = new Array('T', 'O', 'O', 'W', 'A', 'T');
-var cube10 = new Array('R', 'E', 'V', 'L', 'D', 'Y');
-var cube11 = new Array('C', 'I', 'U', 'T', 'M', 'O');
-var cube12 = new Array('H', 'E', 'E', 'N', 'W', 'G');
-var cube13 = new Array('S', 'T', 'O', 'I', 'S', 'E');
-var cube14 = new Array('C', 'H', 'O', 'P', 'A', 'S');
-var cube15 = new Array('W', 'R', 'E', 'T', 'H', 'V');
-var cube16 = new Array('J', 'O', 'O', 'B', 'A', 'B');
 
-var grid = new Array(cube1, cube2, cube3, cube4, cube5, cube6, cube7, cube8, cube9, cube10,
-					 cube11, cube12, cube13, cube14, cube15, cube16);
 
-//phrases at end of game
-var randomPhrase = new Array("Now that's more like it?", 
-							 "3 more minutes of Boggle? Why not.",
-							 "Family game night, here we come!",
-							 "Such letters. Very Words.\nWow.",
-							 "Is 'boggle' even a word? Try again to see!",
-							 "You are boggle champion! Oh yeah.",
-							 "Now you know the boggle hype was real!",
-							 "Ooooh Ahhhh! What a game!",
-							 "BOGGLE 4 EVR DUDE");
 
-// returns a random letter from the cube
-function chooseLetter(cube){
-	 return cube[Math.floor((Math.random()*6))];
+
+
+var tab1 = new Array('A', 'A', 'A', 'F', 'R', 'S');
+var tab2 = new Array('A', 'A', 'E', 'E', 'E', 'E');
+var tab3 = new Array('A', 'A', 'F', 'I', 'R', 'S');
+var tab4 = new Array('A', 'D', 'E', 'N', 'N', 'N');
+var tab5 = new Array('A', 'E', 'E', 'E', 'E', 'M');
+var tab6 = new Array('A', 'E', 'E', 'G', 'M', 'U');
+var tab7 = new Array('A', 'E', 'G', 'M', 'N', 'N');
+var tab8 = new Array('A', 'F', 'I', 'R', 'S', 'Y');
+var tab9 = new Array('B', 'J', 'K', 'QU', 'X', 'Z');
+var tab10 = new Array('C', 'C', 'E', 'N', 'S', 'T');
+var tab11 = new Array('C', 'E', 'I', 'I', 'L', 'T');
+var tab12 = new Array('C', 'E', 'I', 'L', 'P', 'T');
+var tab13 = new Array('C', 'E', 'I', 'P', 'S', 'T');
+var tab14 = new Array('D', 'D', 'H', 'N', 'O', 'T');
+var tab15 = new Array('D', 'H', 'H', 'L', 'O', 'R');
+var tab16 = new Array('D', 'H', 'L', 'N', 'O', 'R');
+var tab17 = new Array('D', 'H', 'L', 'N', 'O', 'R');
+var tab18 = new Array('E', 'I', 'I', 'I', 'T', 'T');
+var tab19 = new Array('E', 'M', 'O', 'T', 'T', 'T');
+var tab20 = new Array('E', 'N', 'S', 'S', 'S', 'U');
+var tab21 = new Array('F', 'I', 'P', 'R', 'S', 'Y');
+var tab22 = new Array('G', 'O', 'R', 'R', 'V', 'W');
+var tab23 = new Array('I', 'P', 'R', 'R', 'R', 'Y');
+var tab24 = new Array('N', 'O', 'O', 'T', 'U', 'W');
+var tab25 = new Array('O', 'O', 'O', 'T', 'T', 'U');
+
+var grid = new Array(tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10,
+					 tab11, tab12, tab13, tab14, tab15, tab16,tab17,tab18,tab19,tab20,tab21,tab22,tab23,tab24,tab25);
+
+
+// returns a random letter from the tab
+function chooseLetter(tab){
+	 return tab[Math.floor((Math.random()*6))];
 }
 
-// returns a random ordering of cubes in the grid, using the Knuth Shuffle from:
+// returns a random ordering of tabs in the grid, using the Knuth Shuffle from:
 // http://www.htmlblog.us/random-javascript-array
 Array.prototype.randomize = function(){
 	var i = this.length; 
@@ -72,96 +68,96 @@ Array.prototype.randomize = function(){
 function playAgain(){
 	document.getElementById("score_overlay").style.visibility = "hidden";
 	document.getElementById("score_screen").style.visibility = "hidden";
-	shuffleBoggleGrid();
+	shuffleboggle_grid();
 }
 
 // randomizes board and resets 
-function shuffleBoggleGrid(){
+function shuffleboggle_grid(){
 	clearBoard();
 	clearlist();
 	grid.randomize();
 	var stringOfI;
 	for (var i = 1; i < grid.length+1; i++){
-		stringOfI = "cube"+i.toString();
+		stringOfI = "tab"+i.toString();
 		var letter = chooseLetter(grid[i-1]);
 		if (letter == 'Q'){letter = "Qu";}
 		document.getElementById(stringOfI).textContent = letter;
 	}
 
-	//clear out timer if player is wants to play before current game has finished
-	if (min >= 0 && sec >= 0){
-		window.clearTimeout(countdownTime);
-		sec = resetsec;
-		min = resetmin;
-	}
-	sum = 0;
-	document.getElementById("currentScore").innerHTML = sum;
-	countdownTimer();
-	return;
-}
+// 	//clear out timer if player is wants to play before current game has finished
+// 	if (min >= 0 && sec >= 0){
+// 		window.clearTimeout(countdownTime);
+// 		sec = resetsec;
+// 		min = resetmin;
+// 	}
+// 	sum = 0;
+// 	document.getElementById("currentScore").innerHTML = sum;
+// 	countdownTimer();
+// 	return;
+// }
 
-// initiate and regulates countdown of game timer
-function countdownTimer(){
- 	sec--;
-  	if (sec == -01) {
-   		sec = 59;
-   		min = min - 1; 
-	}
-  	else {
-   		min = min; 
-	}
-	if (sec <= 9) { 
-		document.getElementById("countdownTimer").innerHTML = " " + min + ":0" + sec;
-	}
-	else{
-		document.getElementById("countdownTimer").innerHTML  = " " + min + ":" + sec;
-	}
+// // initiate and regulates countdown of game timer
+// function countdownTimer(){
+//  	sec--;
+//   	if (sec == -01) {
+//    		sec = 59;
+//    		min = min - 1; 
+// 	}
+//   	else {
+//    		min = min; 
+// 	}
+// 	if (sec <= 9) { 
+// 		document.getElementById("countdownTimer").innerHTML = " " + min + ":0" + sec;
+// 	}
+// 	else{
+// 		document.getElementById("countdownTimer").innerHTML  = " " + min + ":" + sec;
+// 	}
 
-	countdownTime = window.setTimeout("countdownTimer();", 1000);
+// 	countdownTime = window.setTimeout("countdownTimer();", 1000);
 
-	if (min == 0 && sec == 0) { 
-		// stop timer and display end game screen
-		window.clearTimeout(countdownTime); 
-		sec = resetsec;
-		min = resetmin;
-		document.getElementById("score_overlay").style.visibility = "visible";
-		document.getElementById("score_screen").style.visibility = "visible";
+// 	if (min == 0 && sec == 0) { 
+// 		// stop timer and display end game screen
+// 		window.clearTimeout(countdownTime); 
+// 		sec = resetsec;
+// 		min = resetmin;
+// 		document.getElementById("score_overlay").style.visibility = "visible";
+// 		document.getElementById("score_screen").style.visibility = "visible";
 		
-		// provide game stats
-		document.getElementById("score").innerHTML = sum;
-		var p = Math.floor( Math.random() * (randomPhrase.length));
-		document.getElementById("endMessage").innerHTML = randomPhrase[p];
-	}
-}
+// 		// provide game stats
+// 		document.getElementById("score").innerHTML = sum;
+// 		var p = Math.floor( Math.random() * (randomPhrase.length));
+// 		document.getElementById("endMessage").innerHTML = randomPhrase[p];
+// 	}
+// }
 
-// called when mouse press over unactivated cube --> start of a word
-function buildWord(event){
-	var cube = event.target;
-	if (cube.style.backgroundColor != "orange"){
-		cube.style.backgroundColor = "orange";
-		currentString = currentString.concat(cube.textContent);
-		console.log(currentString);
-		prevcube = Number(cube.id.substr(4, cube.id.length-1));
-		if (mousedown == 0){mousedown++;}
-	}
-}
+// // called when mouse press over unactivated tab --> start of a word
+// function buildWord(event){
+// 	var tab = event.target;
+// 	if (tab.style.backgroundColor != "orange"){
+// 		tab.style.backgroundColor = "orange";
+// 		currentString = currentString.concat(tab.textContent);
+// 		console.log(currentString);
+// 		prevtab = Number(tab.id.substr(4, tab.id.length-1));
+// 		if (mousedown == 0){mousedown++;}
+// 	}
+// }
 
 // while in the process of building a word
 function buildingWord(event){
 	if (mousedown == 1){
-		var cube = event.target;
-		if (cube.style.backgroundColor != "orange"){
-			var currentcube = Number(cube.id.substr(4, cube.id.length-1));
-			//if next cube touched is not immediately by last cube, don't do anything
-			if (currentcube < prevcube-5 || currentcube > prevcube+5 ||
-				currentcube == prevcube-2 || currentcube == prevcube+2 ||
-				(prevcube%4 == 0 && currentcube == prevcube-3)|| 
-				((prevcube-1)%4 == 0 && currentcube == prevcube+3)){
+		var tab = event.target;
+		if (tab.style.backgroundColor != "orange"){
+			var currenttab = Number(tab.id.substr(4, tab.id.length-1));
+			//if next tab touched is not immediately by last tab, don't do anything
+			if (currenttab < prevtab-5 || currenttab > prevtab+5 ||
+				currenttab == prevtab-2 || currenttab == prevtab+2 ||
+				(prevtab%4 == 0 && currenttab == prevtab-3)|| 
+				((prevtab-1)%4 == 0 && currenttab == prevtab+3)){
 				return;
 			}
-			cube.style.backgroundColor = "orange";
-			currentString = currentString.concat(cube.textContent);
-			prevcube = currentcube;
+			tab.style.backgroundColor = "orange";
+			currentString = currentString.concat(tab.textContent);
+			prevtab = currenttab;
 			console.log(currentString);
 		if (mousedown == 0){mousedown=1;}
 		}
@@ -181,12 +177,12 @@ function submitWord(event){
 }
 
 function clearBoard(){
-	var grid = document.getElementById("boggleGrid");
-	var cubes = grid.getElementsByTagName("div");
-	for (var i=0; i<cubes.length; i++)
+	var grid = document.getElementById("boggle_grid");
+	var tabs = grid.getElementsByTagName("div");
+	for (var i=0; i<tabs.length; i++)
 	{
-     	if (cubes[i].style.backgroundColor != "white"){
-     		cubes[i].style.backgroundColor = "white";
+     	if (tabs[i].style.backgroundColor != "white"){
+     		tabs[i].style.backgroundColor = "white";
      	}
 	}
 	currentString = "";
