@@ -1,11 +1,11 @@
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 
-div.light-orange{
+/*div.light-orange{
 	background-color: rgb(255, 173, 88);
 	padding-top: 5px;
 	padding-bottom: 10px;
-}
+}*/
 
 div.text{
 	margin-left: auto;
@@ -17,7 +17,7 @@ div.text{
 	vertical-align: middle;
 	text-align:left;
 	table-layout: auto; 
-	background-color: orange;
+	background-color: white;
   	position: relative;
   	top: 0; left: 0; bottom: 0; right: 0;
 }
@@ -129,7 +129,7 @@ table{
 }
 
 .btnW {
-	border-radius: 50%;
+	/*border-radius: 50%;*/
 	width: 90px;
 	height: 90px;
 	padding: 0;
@@ -145,7 +145,7 @@ table{
 	top: 6px;
 }
 
-.menuBtn {
+/*.menuBtn {
 	background-color:#00ccff;
 	-webkit-border-top-right-radius:21px;
 	-moz-border-radius-topright:21px;
@@ -178,9 +178,9 @@ table{
 
 .popupBtn{
 	border:3px solid #fff;
-}
+}*/
 
-.message{
+/*.message{
 	font-size:36px;
 	line-height:36px;
 	color: rgb(255, 173, 88);
@@ -198,4 +198,14 @@ table{
 
 .timeLeft{
 	padding: 0 0 0 0;
+}*/
+
+#boggleGrid{
+	background-color: #398BD4;
+	border: 6px ;
+	border-style: solid;
+	border-color: yellow;
+	margin-right: 800px; 
+	margin-left: 800px; 
+	margin-bottom: 5px;
 }
