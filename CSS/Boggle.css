@@ -1,11 +1,7 @@
 .clearfix:before, .clearfix:after { content: ""; display: table; }
 .clearfix:after { clear: both; }
 
-/*div.light-orange{
-	background-color: rgb(255, 173, 88);
-	padding-top: 5px;
-	padding-bottom: 10px;
-}*/
+
 
 div.text{
 	margin-left: auto;
@@ -28,12 +24,6 @@ h1,h2,h3,h4{
 	color: rgb(255,255,255);
 }
 
-h1.gamename{
-	font-size: 150px;
-	margin-top: 20px;
-	margin-bottom: 55px;
-}
-
 span.letters{
 	width: 10px;
 	color: #00CEFF;
@@ -53,31 +43,9 @@ table{
 	display: inline-block;
 }
 
-.container-popup {
-    position: fixed;
-    z-index:1001;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0,0,0,.8);
-    visibility:hidden;
-}
 
-.score-popup {
-    width: 350px;
-    height: 350px;
-    background: #00CEFF;
-    position: fixed;
-    z-index:1002;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    border-radius: 5%;
-    visibility:hidden;
-}
+
+
 .btn{
 	border: none;
 	font-family: inherit;
@@ -129,7 +97,6 @@ table{
 }
 
 .btnW {
-	/*border-radius: 50%;*/
 	width: 90px;
 	height: 90px;
 	padding: 0;
@@ -145,60 +112,7 @@ table{
 	top: 6px;
 }
 
-/*.menuBtn {
-	background-color:#00ccff;
-	-webkit-border-top-right-radius:21px;
-	-moz-border-radius-topright:21px;
-	border-top-right-radius:21px;
-	-webkit-border-bottom-left-radius:21px;
-	-moz-border-radius-bottomleft:21px;
-	border-bottom-left-radius:21px;
-	text-indent:0px;
-	border:3px solid #00ccff;
-	display:inline-block;
-	color:#ffffff;
-	font-family:Fredoka One;
-	font-size:28px;
-	font-style:normal;
-	height:80px;
-	line-height:30px;
-	width:150px;
-	text-decoration:none;
-	text-align:center;
-	clear:left;
-	float:left;
-	margin-bottom:15px;
-}.menuBtn:hover {
-	background-color:#fff;
-	color: #00ccff;
-}.menuBtn:active {
-	position:relative;
-	top:1px;
-}
 
-.popupBtn{
-	border:3px solid #fff;
-}*/
-
-/*.message{
-	font-size:36px;
-	line-height:36px;
-	color: rgb(255, 173, 88);
-	margin-left: 10px;
-	margin-right: 10px;
-}
-
-.clock{
-	margin-bottom: 30px;
-	font-size: 48px;
-	font-weight: 200;
-	margin-top: 15px; 
-	color: #fff;
-}
-
-.timeLeft{
-	padding: 0 0 0 0;
-}*/
 
 #boggleGrid{
 	background-color: #398BD4;
