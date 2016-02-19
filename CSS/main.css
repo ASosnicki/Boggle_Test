@@ -1,3 +1,106 @@
+
+.btn{
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 5px 16px;
+    display: inline-block;
+    margin: 5px 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 50px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 90px;
+    outline: none;
+    position: relative;
+    background: #fff;
+    color: #00CEFF;
+    box-shadow: 0 6px #0090b2;
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn:before{
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+}
+
+.btn_tab {
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    padding: 0;
+}
+
+.btn_tab:hover {
+    box-shadow: 0 4px #ab3c3c;
+    top: 2px;
+}
+
+.btn_tab:active {
+    box-shadow: 0 0 #ab3c3c;
+    top: 6px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #boggle_grid {
 
 background-color: #398bd4;
@@ -27,7 +130,7 @@ vertical-align: middle;
 
 
 
-.btn_tab{
+/*.btn_tab{
     border: none;
     font-family: inherit;
     font-size: inherit;
@@ -61,6 +164,7 @@ vertical-align: middle;
     content: '';
     position: absolute;
     z-index: -1;
+    color: #ACCEEC;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
@@ -94,12 +198,12 @@ vertical-align: middle;
 .btn_tab:active {
     box-shadow: 0 0 #ACCEEC;
     top: 6px;
-}
+}*/
 
-table {
+/*table {
     width:100%;
 }
-
+*/
 
 #s_btn{
 
