@@ -26,7 +26,7 @@ h1,h2,h3,h4{
 
 span.letters{
 	width: 10px;
-	color: #00CEFF;
+	color: black;
 	font-size: 50px;
 	background-color: transparent;
 	margin: auto auto;
@@ -47,6 +47,7 @@ table{
 
 
 .btn{
+	border-radius: 25px;
 	border: none;
 	font-family: inherit;
 	font-size: inherit;
@@ -66,7 +67,7 @@ table{
 	outline: none;
 	position: relative;
 	background: #fff;
-	color: #00CEFF;
+	color: black;
 	box-shadow: 0 6px #0090b2;
 	-webkit-transition: none;
 	-moz-transition: none;
@@ -122,4 +123,5 @@ table{
 	margin-right: 800px; 
 	margin-left: 800px; 
 	margin-bottom: 5px;
+	padding: 20px 5px;
 }

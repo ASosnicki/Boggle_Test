@@ -13,6 +13,7 @@ font : 100%/1.4 'Fredoka One','lucida sans unicode', 'lucida grande', 'Trebuchet
 color : #ff7400; 
 text-align: center;
 background: #ff7400;
+ background-clip: padding-box;
  -webkit-user-select: none;  /*so that the screen cannot be highlighted --> makes the click and drag work!*/
   -moz-user-select: none;    
   -ms-user-select: none;      
@@ -92,6 +93,7 @@ background: #ff7400;
   #headcontainer {
     width: 100%;
     background-color:#ff7400;
+     background-clip: padding-box;
     
   }
 
@@ -115,14 +117,3 @@ background: #ff7400;
     vertical-align: middle;
   }
     
-      #maincontent{
-        clear: both;
-        width: 80%; /* 1000px / 1250px 
-        font-size: 0.8125em; /* 13 / 16 */
-        max-width: 92.3em; /* 1200px / 13 */
-        margin: 0 auto;
-        padding: 1em 0px;
-        color: orange;
-        line-height: 1.5em;
-        position: relative;
-      }
