@@ -5,22 +5,14 @@ var boggleWords = new Array();
 var currentString = "";
 //flag for if string is being built currently
 var mousedown = 0;
-//variables for game timer and timer
-var resetsec = 01;
-var resetmin = 3;
-var sec = 0;
-var min = 0;
-var countdownTime;
 //words from boggleDictionary.js 
 var dictionaryWords; 
 // game score
 var sum = 0;
 // for knowing legal moves
 var prevcube;
-// for pausing game
-var is_pause = false;
 
-// Boggle letters from my Boggle game, a Hasbro-owned product
+// Cube Array
 var cube1 = new Array('A', 'A', 'A', 'F', 'R', 'S');
 var cube2 = new Array('A', 'A', 'E', 'E', 'E', 'E');
 var cube3 = new Array('A', 'A', 'F', 'I', 'R', 'S');
@@ -50,19 +42,6 @@ var cube25 = new Array('O', 'O', 'O', 'T', 'T', 'U');
 var grid = new Array(cube1, cube2, cube3, cube4, cube5, cube6, cube7, cube8, cube9, cube10,
 					 cube11, cube12, cube13, cube14, cube15, cube16, cube17, cube18,
 					 cube19, cube20, cube21, cube22, cube23, cube24, cube25);
-
-
-
-//phrases at end of game
-// var randomPhrase = new Array("Now that's more like it?", 
-// 							 "3 more minutes of Boggle? Why not.",
-// 							 "Family game night, here we come!",
-// 							 "Such letters. Very Words.\nWow.",
-// 							 "Is 'boggle' even a word? Try again to see!",
-// 							 "You are boggle champion! Oh yeah.",
-// 							 "Now you know the boggle hype was real!",
-// 							 "Ooooh Ahhhh! What a game!",
-// 							 "BOGGLE 4 EVR DUDE");
 
 // returns a random letter from the cube
 function chooseLetter(cube){
@@ -103,50 +82,16 @@ function shuffleBoggleGrid(){
 		document.getElementById(stringOfI).textContent = letter;
 	}
 
-	//clear out timer if player is wants to play before current game has finished
-	if (min >= 0 && sec >= 0){
-		window.clearTimeout(countdownTime);
-		sec = resetsec;
-		min = resetmin;
-	}
+	// //clear out timer if player is wants to play before current game has finished
+	// if (min >= 0 && sec >= 0){
+	// 	window.clearTimeout(countdownTime);
+	// 	sec = resetsec;
+	// 	min = resetmin;
+	// }
 	sum = 0;
 	document.getElementById("currentScore").innerHTML = sum;
 	countdownTimer();
 	return;
-}
-
-// initiate and regulates countdown of game timer
-function countdownTimer(){
- 	sec--;
-  	if (sec == -01) {
-   		sec = 59;
-   		min = min - 1; 
-	}
-  	else {
-   		min = min; 
-	}
-	if (sec <= 9) { 
-		document.getElementById("countdownTimer").innerHTML = " " + min + ":0" + sec;
-	}
-	else{
-		document.getElementById("countdownTimer").innerHTML  = " " + min + ":" + sec;
-	}
-
-	countdownTime = window.setTimeout("countdownTimer();", 1000);
-
-	if (min == 0 && sec == 0) { 
-		// stop timer and display end game screen
-		window.clearTimeout(countdownTime); 
-		sec = resetsec;
-		min = resetmin;
-		document.getElementById("score_overlay").style.visibility = "visible";
-		document.getElementById("score_screen").style.visibility = "visible";
-		
-		// provide game stats
-		document.getElementById("score").innerHTML = sum;
-		var p = Math.floor( Math.random() * (randomPhrase.length));
-		document.getElementById("endMessage").innerHTML = randomPhrase[p];
-	}
 }
 
 // called when mouse press over unactivated cube --> start of a word
@@ -285,29 +230,4 @@ function getScores(wl, index){
 			return;
 		}
 	}
-}
-
-// pause game appropriately
-function pause(){
-	if (is_pause == false){
-		if (min < resetmin){
-			window.clearTimeout(countdownTime);
-			is_pause = true;
-			if (sec<=9) { 
-				document.getElementById("time").innerHTML = "\n" + min + ":0" + sec;
-			}
-			else{
-				document.getElementById("time").innerHTML  = "\n" + min + ":" + sec;
-			}
-			document.getElementById("score_overlay").style.visibility = "visible";
-			document.getElementById("pause_screen").style.visibility = "visible";
-			return;
-		}
-	}
-	else{
-		document.getElementById("score_overlay").style.visibility = "hidden";
-		document.getElementById("pause_screen").style.visibility = "hidden";
-		is_pause = false;
-		countdownTime = window.setTimeout("countdownTimer();", 1000);
-	}	
 }
